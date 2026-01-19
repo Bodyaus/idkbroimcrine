@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приклад Футера для Готелю</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Щоб футер завжди був внизу */
+        }
+
+        main {
+            flex-grow: 1; /* Основний контент займає весь доступний простір */
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 20px;
+            font-size: 14px;
+            border-top: 5px solid #ffcc00; /* Золотистий акцент */
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .footer-section h4 {
+            color: #ffcc00; /* Золотий для заголовків */
+            margin-bottom: 15px;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        .footer-section p,
+        .footer-section ul {
+            color: #ccc;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #fff;
+        }
+
+        .social-icons {
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            color: #ccc;
+            font-size: 20px;
+            margin-right: 15px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #ffcc00; /* Золотий при наведенні */
+        }
+
+        .footer-bottom {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #555;
+            text-align: center;
+            color: #aaa;
+            font-size: 13px;
+        }
+
+        /* Додаткові стилі для іконок (наприклад, Font Awesome) */
+        /* Це лише приклад, вам потрібно буде підключити бібліотеку Font Awesome */
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+        /* Адаптивність */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-section {
+                margin-bottom: 30px;
+            }
+
+            .social-icons {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section about-us">
+                <h4>Про нас</h4>
+                <p>Ласкаво просимо до наших готелів! Ми пропонуємо найкращий сервіс та комфорт для вашого незабутнього відпочинку. Наша мета - зробити ваше перебування ідеальним.</p>
+            </div>
+
+            <div class="footer-section quick-links">
+                <h4>Швидкі посилання</h4>
+                <ul>
+                    <li><a href="#">Головна</a></li>
+                    <li><a href="#">Номери</a></li>
+                    <li><a href="#">Послуги</a></li>
+                    <li><a href="#">Галерея</a></li>
+                    <li><a href="#">Контакти</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section contact-info">
+                <h4>Контакти</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 123456, Івано-Франківськ, Україна</p>
+                <p><i class="fas fa-phone"></i> +38 (012) 345 6789</p>
+                <p><i class="fas fa-envelope"></i> mmresort@gmail.com</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section newsletter">
+                <h4>Підписка</h4>
+                <p>Отримуйте останні новини та спеціальні пропозиції.</p>
+                <form action="#" method="post">
+                    <input type="email" name="email" placeholder="Ваш Email" required style="padding: 10px; border: none; border-radius: 5px; width: calc(100% - 110px); margin-right: 10px;">
+                    <button type="submit" style="padding: 10px 15px; background-color: #ffcc00; color: #333; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">Підписатись</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Назва Готелю. Всі права захищені.</p>
+        </div>
+    </footer>
+</body>
+</html>

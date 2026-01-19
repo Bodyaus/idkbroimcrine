@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>список постів</title>
+  <style>
+/* Основні налаштування */
+body {
+    background-color: #f4f7f6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.main-title {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #2c3e50;
+    margin-bottom: 40px;
+}
+
+/* Сітка для карток */
+.hotel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* Стиль картки готелю */
+.hotel-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.hotel-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.hotel-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.hotel-title {
+    margin: 0 0 10px 0;
+    font-size: 1.4rem;
+    color: #1a508b;
+}
+
+.hotel-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+/* Футер картки */
+.hotel-footer {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #999;
+    font-size: 0.85rem;
+}
+
+.hotel-footer span {
+    color: #333;
+    font-weight: 600;
+}
+
+/* Повідомлення про відсутність даних */
+.no-data {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px;
+    background: #fff;
+    border-radius: 8px;
+    color: #888;
+}
+
+
+    </style>
+</head>
+<body>
+{% include "mysite/header.html" %}
+
+
+<div class="container">
+  <h1 class="main-title">Всі готелі</h1>
+
+  <div class="hotel-grid">
+    {% for hotel in hotels %}
+    <article class="hotel-card">
+      <div class="hotel-content">
+        <h2 class="hotel-title">{{ hotel.title }}</h2>
+        <p class="hotel-description">{{ hotel.content }}</p>
+        <p class="hotel-description">{{ hotel.price }} грн</p>
+        <div class="hotel-footer">
+          <small>Автор: <span>{{ hotel.author }}</span></small>
+          <small>{{ hotel.date_posted|date:"d.m.Y" }}</small>
+        </div>
+      </div>
+    </article>
+    {% empty %}
+      <p class="no-data">Наразі готелів немає.</p>
+    {% endfor %}
+  </div>
+</div>
+
+{% include "mysite/footer.html" %}
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
